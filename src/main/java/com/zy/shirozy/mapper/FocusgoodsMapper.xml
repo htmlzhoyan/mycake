@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.mapper.FocusgoodsMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.domain.Focusgoods">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="goodid" jdbcType="INTEGER" property="goodid" />
+    <result column="user" jdbcType="VARCHAR" property="user" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, goodid, user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_focusgoods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_focusgoods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.domain.Focusgoods">
+    insert into t_focusgoods (id, goodid, user
+      )
+    values (#{id,jdbcType=INTEGER}, #{goodid,jdbcType=INTEGER}, #{user,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.domain.Focusgoods">
+    insert into t_focusgoods
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="goodid != null">
+        goodid,
+      </if>
+      <if test="user != null">
+        user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="goodid != null">
+        #{goodid,jdbcType=INTEGER},
+      </if>
+      <if test="user != null">
+        #{user,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.domain.Focusgoods">
+    update t_focusgoods
+    <set>
+      <if test="goodid != null">
+        goodid = #{goodid,jdbcType=INTEGER},
+      </if>
+      <if test="user != null">
+        user = #{user,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.domain.Focusgoods">
+    update t_focusgoods
+    set goodid = #{goodid,jdbcType=INTEGER},
+      user = #{user,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
