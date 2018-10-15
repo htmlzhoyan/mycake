@@ -25,11 +25,27 @@ public class AuthorityServiceImpl implements AuthorityServie {
                 menuVo.setChildrens(new ArrayList<>());
                 menuVos.add(menuVo);
             }else{
-               
+                int index=indexPareng(menuVos,p);
+                if(index>-1){
+                    menuVos.get(index).getChildrens().add(p);
+                }
             }
         }
+        System.out.println(menuVos);
             return  menuVos;
     }
 
+    @Override
+    public List<Authority> selectByParent(Integer id) {
+        return authorityMapper.selectByParent(id);
+    }
 
+    private int indexPareng(List<MenuVo> menuVos,Authority authority){
+        for (int i = 0; i < menuVos.size() ; i++) {
+            if(menuVos.get(i).getParent().getId().intValue()==authority.getParentid().intValue()){
+                return i;
+            }
+        }
+        return -1;
+    }
 }

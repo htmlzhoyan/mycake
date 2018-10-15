@@ -31,5 +31,11 @@ public class MenuVo {
 
     private List<Authority> childrens;
 
-
+    @Override
+    public String toString() {
+        return "MenuVo{" +
+                "parent=" + parent +
+                ", childrens=" + childrens +
+                '}';
+    }
 }

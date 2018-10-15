@@ -22,6 +22,9 @@ public class AuthorityController {
 
         return authorityServie.queryAll();
     }
-
+    @GetMapping("authorityById.do")
+    public List<Authority> selectByParent(Integer id){
+        return authorityServie.selectByParent(id);
+    }
 
 }

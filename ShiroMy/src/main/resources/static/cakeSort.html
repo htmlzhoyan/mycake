@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="css/public.css" />
 		<link rel="stylesheet" href="css/cakeSort.css" />
 		<script type="text/javascript" src="js/public.js" ></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/handlebars.min.js"></script>
 		
 	</head>
 	<!--[if lt IE 9]>
@@ -35,24 +37,8 @@
 			
 			<!--sort-->
 			<div class="sort">
-				<dl class="sort1">
-					<a href="sort_fruit.html">
-						<dt><img src="images/s_c1.png" width="100%"/></dt>
-						<dd>奶油蛋糕</dd>
-					</a>
-					
-				
-			
-					<a href="sort_cookie.html">
-						<dt><img src="images/s_c2.png"  width="50%"/></dt>
-						<dd>冰激凌蛋糕</dd>
-					</a>
-				
-				
-					<a href="#">
-						<dt><img src="images/s_c3.png"  width="100%"/></dt>
-						<dd>生日蛋糕</dd>
-					</a>
+				<dl class="sort1" id="isList">
+
 				</dl>
 				
 				<br />
@@ -104,6 +90,35 @@
 
 		</div>
 		
-		
+		<script id="show-cake" type="text/x-handlebars-template">
+			{{#each list}}
+			<a href="{{aurl}}?id={{id}}">
+				<dt><img src="{{aicon}}" width="100%" height="100%"/></dt>
+				<dd>{{title}}</dd>
+			</a>
+				{{/each}}
+
+		</script>
+	<script>
+        function getQueryString(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var result = window.location.search.substr(1).match(reg);
+            return result ? decodeURIComponent(result[2]) : null;
+        }
+		$(function () {
+            var userhtml = $("#show-cake").html();
+            var template = Handlebars.compile(userhtml);
+            var id = getQueryString("id")
+            $.ajax({
+                type:'get',
+                url:"authorityById.do",
+				data:{"id":id},
+                dataType:"json",
+                success:function(data){
+                    $("#isList").html(template({list:data}));
+                }
+            })
+        })
+	</script>
 	</body>
 </html>
