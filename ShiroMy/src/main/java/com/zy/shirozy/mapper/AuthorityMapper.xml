@@ -9,6 +9,17 @@
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="type" jdbcType="INTEGER" property="type" />
   </resultMap>
+
+  <select id="selectByParentId"  resultMap="BaseResultMap">
+    SELECT DISTINCT a1.* from t_authority a1
+    INNER JOIN t_roleauthority roa
+    on a1.id = roa.aid
+    INNER JOIN t_role r
+    on roa.rid = r.id
+    where a1.parentId = 0
+  </select>
+
+
   <sql id="Base_Column_List">
     id, aicon, aurl, parentId, title, type
   </sql>

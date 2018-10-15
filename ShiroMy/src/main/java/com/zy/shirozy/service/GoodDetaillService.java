@@ -29,6 +29,7 @@ public interface GoodDetaillService {
     R deteleById(int id);
     R updateById(GoodDetaill goodDetaill);
     List<GoodDetaill> queryAll();
+
 }
 
 
