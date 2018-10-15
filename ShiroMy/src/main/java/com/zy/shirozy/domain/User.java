@@ -2,24 +2,11 @@ package com.zy.shirozy.domain;
 
 public class User {
     private Integer id;
-
     private String no;
-
     private String password;
-
     private String name;
-
-    private String sex;
-
-    private Integer age;
-
     private String phone;
-
-    private String headphoto;
-
     private Integer flag;
-
-    private String note;
 
     public Integer getId() {
         return id;
@@ -53,21 +40,9 @@ public class User {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getSex() {
-        return sex;
-    }
 
-    public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
-    }
 
-    public Integer getAge() {
-        return age;
-    }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 
     public String getPhone() {
         return phone;
@@ -77,13 +52,7 @@ public class User {
         this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getHeadphoto() {
-        return headphoto;
-    }
 
-    public void setHeadphoto(String headphoto) {
-        this.headphoto = headphoto == null ? null : headphoto.trim();
-    }
 
     public Integer getFlag() {
         return flag;
@@ -93,11 +62,15 @@ public class User {
         this.flag = flag;
     }
 
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note == null ? null : note.trim();
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", no='" + no + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", flag=" + flag +
+                '}';
     }
 }

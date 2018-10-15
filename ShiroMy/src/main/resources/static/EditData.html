@@ -7,8 +7,40 @@
 		<link rel="stylesheet" href="css/public.css" />
 		<link rel="stylesheet" href="css/EditData.css" />
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript " src="js/jquery.min.js"></script>
+
 		<title>编辑资料</title>
-		
+
+
+
+
+		<script type="text/javascript">
+            $(function () {
+                var json=getData();
+                var obj=JSON.parse(decodeURI(json));
+                showData(obj);
+            })
+
+            function getData() {
+                var url=window.location.search;
+                index=url.indexOf("?");
+                if(index>-1){
+                    var str = url.substr(index+1);
+                    if(str.indexOf('=')){
+                        return str.split('=')[1];
+                    }
+                }
+                return null;
+            }
+            function showData(obj) {
+                $("#f1").val(obj.no);
+                $("#f2").val(obj.sex);
+                $("#f3").val(obj.phone);
+                $("#f4").val(obj.note);
+
+            }
+		</script>
+
 	</head>
 	<body>
 		<div class="Edit">
@@ -17,7 +49,7 @@
 				<a href=""><i class="iconfont">&#xe632;</i></a>
 			</header>
 			<!--form-->
-			<form action="" method="post">
+			<form action="userupdate.do" method="post">
 				<div class="tit">
 					<span>
 						<i class="iconfont">&#xe606;</i>
@@ -30,25 +62,22 @@
 				</div>
 				<p>
 					<label>昵称：</label>
-					<input type="text" name="" id="" value="" />
+					<input type="text" name="no" id="f1" value="" />
 				</p>
 				<p>
 					<label>年龄：</label>
-					<input type="text" name="" id="" value="" />
+					<input type="text" name="sex" id="f2" value="" />
 				</p>
 				<p>
 					<label>手机号：</label>
-					<input type="text" name="" id="" value="" />
+					<input type="text" name="phone" id="f3" value="" />
 				</p>
-				<p>
-					<label>地址：</label>
-					<input type="text" name="" id="" value="" />
-				</p>
+
 				<p>
 					<label>个人简介：</label>
 					<textarea placeholder="留下你的自我介绍吧"></textarea>
 				</p>
-				<input type="submit" name="" id="" value="确认修改" />
+				<input type="submit" name="note" id="f4" value="确认修改" />
 			</form>
 		</div>
 	</body>

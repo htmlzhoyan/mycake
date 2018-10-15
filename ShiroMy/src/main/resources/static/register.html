@@ -11,18 +11,18 @@
 	      <script src="js/html5shiv.js"></script>
 	      <script src="js/respond.js"></script>
 	    <![endif]-->
-
+		<script src="js/jquery.min.js"></script>
 	</head>
 	<body>
 		<div class="register">
 			<h1><img src="images/sR-logo.png"/></h1>
 			<!--form-->
-			<form action="#" method="post">
-				<p><label>手机号：</label><input type="text" value="" /></p>
-				<p><label>验证码：</label><input type="text" value="" /></p>
-				<p><label>设置密码：</label><input type="text" value="" /></p>
+			<form>
+				<p><label>用户名：</label><input name="name" type="text" value="" /></p>
+				<p><label>手机号：</label><input name="phone" type="text" value="" /></p>
+				<p><label>设置密码：</label><input name="password" type="text" value="" /></p>
 				<p><label>确认密码：</label><input type="text" value="" /></p>
-				<p><input type="submit" value="注册"/></p>
+				<p><input id="btn" type="button" value="注册"/></p>
 			</form>
 			<!--other-->
 			<div class="other">
@@ -31,6 +31,28 @@
 			</div>
 		</div>
 	</body>
+	<script>
+        $("#btn").click(function () {
+
+            var name = $("input[name='name']").val();
+            var phone = $("input[name='phone']").val();
+            var password = $("input[name='password']").val();
+            $.ajax({
+                type:"post",
+                url:"userregister.do",
+                dataType:"json",
+                data:{name:name,password:password,phone:phone,flag:1},
+                success:function(data){
+                    console.log(data);
+                    if(data.code==200){
+                        location.href="login.html"
+                    }
+
+
+                }
+            })
+        })
+	</script>
 	<script>
 		(function (doc, win) {
 		  var docEl = doc.documentElement,
@@ -45,6 +67,8 @@
 		  win.addEventListener(resizeEvt, recalc, false);
 		  doc.addEventListener('DOMContentLoaded', recalc, false);
 		})(document, window);
+
+
 	</script>
 </html>
 

@@ -34,7 +34,7 @@ public class ShiroConfig {
         map.put("/login.html","anon");
         map.put("/register.html","anon");
         map.put("/userlogin.do","anon");
-        map.put("/blogstart.do","anon");
+        map.put("/userregister.do","anon");
         map.put("/css/**","anon");
         map.put("/font/**","anon");
         map.put("/images/**","anon");

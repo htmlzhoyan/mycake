@@ -2,17 +2,22 @@ package com.zy.shirozy.mapper;
 
 
 import com.zy.shirozy.domain.New;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 public interface NewMapper {
-    int deleteByPrimaryKey(Integer id);
 
+    @Delete("delete from t_new where id = #{id,jdbcType=INTEGER}\n")
+    int deleteByid(Integer id);
+
+    @Insert("insert into t_new (id, aid) values (#{id,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER})")
     int insert(New record);
 
-    int insertSelective(New record);
+    @Select("select * from t_new")
+    @ResultType(New.class)
+    List<New> queryAll();
 
-    New selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(New record);
-
-    int updateByPrimaryKey(New record);
+    @Update("update t_new set aid = #{aid,jdbcType=INTEGER} where id = #{id,jdbcType=INTEGER}")
+    int updateByid(New record);
 }

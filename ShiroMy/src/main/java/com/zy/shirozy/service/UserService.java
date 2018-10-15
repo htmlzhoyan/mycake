@@ -8,10 +8,7 @@ import com.zy.shirozy.vo.R;
 
 import java.util.List;
 
-/**
- *@Author feri
- *@Date Created in 2018/10/12 11:34
- */
+
 public interface UserService {
 
     //注册
@@ -27,6 +24,9 @@ public interface UserService {
 
 
     List<MenuVo> queryMenu(int uid);
+
+    //修改个人资料
+    boolean updateUserById(User user);
 
 
 }
