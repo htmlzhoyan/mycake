@@ -15,6 +15,8 @@ public interface UserMapper {
             " #{flag,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR})")
     int insert(User record);
 
+
+
     @Select("select * from t_user where no=#{name} or name =#{name} and flag=1")
     @ResultType(User.class)
     User selectByName(String name);

@@ -32,6 +32,7 @@ public class ShiroConfig {
         filterFactoryBean.setUnauthorizedUrl("error.html");
         Map<String,String> map=new HashMap<>();
         map.put("/login.html","anon");
+        map.put("/register.html","anon");
         map.put("/userlogin.do","anon");
         map.put("/blogstart.do","anon");
         map.put("/css/**","anon");
