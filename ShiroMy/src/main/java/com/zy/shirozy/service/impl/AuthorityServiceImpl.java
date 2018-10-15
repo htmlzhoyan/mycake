@@ -25,11 +25,11 @@ public class AuthorityServiceImpl implements AuthorityServie {
                 menuVo.setChildrens(new ArrayList<>());
                 menuVos.add(menuVo);
             }else{
-                int
+               
             }
         }
             return  menuVos;
     }
 
-    private
+
 }
