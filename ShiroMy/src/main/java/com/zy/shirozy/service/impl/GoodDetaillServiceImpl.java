@@ -29,7 +29,7 @@ import java.util.List;
  * @since 1.0.0
  */
 @Service
-public class GoodDetaillServiceImpl implements GoodDetaillService {
+public class GoodDetaillServiceImpl implements GoodDetaillService{
 
     @Autowired
     private GoodDetaillMapper goodDetaillMapper;
@@ -51,6 +51,11 @@ public class GoodDetaillServiceImpl implements GoodDetaillService {
     @Override
     public List<GoodDetaill> queryAll() {
         return goodDetaillMapper.queryAll();
+    }
+
+    @Override
+    public List<GoodDetaill> selectByGoodsid(Integer goodId) {
+        return goodDetaillMapper.selectByGoodsid(goodId);
     }
 }
 

@@ -4,6 +4,7 @@ import com.zy.shirozy.common.PassUtil;
 import com.zy.shirozy.domain.Authority;
 import com.zy.shirozy.domain.User;
 import com.zy.shirozy.mapper.AuthorityMapper;
+
 import com.zy.shirozy.mapper.UserMapper;
 import com.zy.shirozy.service.UserService;
 import com.zy.shirozy.common.ResultUtil;
@@ -12,7 +13,7 @@ import com.zy.shirozy.vo.MenuVo;
 import com.zy.shirozy.vo.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.ArrayList;
 import java.util.List;

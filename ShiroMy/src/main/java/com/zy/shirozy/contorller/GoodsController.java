@@ -12,10 +12,15 @@ package com.zy.shirozy.contorller;
 
 import com.zy.shirozy.domain.GoodDetaill;
 import com.zy.shirozy.service.GoodDetaillService;
+import com.zy.shirozy.service.impl.GoodDetaillServiceImpl;
+import com.zy.shirozy.vo.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -29,7 +34,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class GoodsController {
 
     @Autowired
-    private GoodDetaillService goodDetaillService;
+    private GoodDetaillServiceImpl goodDetaillService;
 
     @RequestMapping(value = "/goodsadd.do",method = {RequestMethod.POST})
     public String add(GoodDetaill goodDetaill){
@@ -38,6 +43,19 @@ public class GoodsController {
         }else {
             return "redirect:/goodsadd.html";
         }
+    }
+    @RequestMapping(value = "/goodsDetail",method = {RequestMethod.GET})
+    @ResponseBody
+    public R selectByGoodsid(Integer id){
+        List<GoodDetaill> list= null;
+        list = goodDetaillService.selectByGoodsid(id);
+        R r = new R();
+        r.setCode(200);
+        r.setMsg("获取成功");
+        r.setData(list);
+
+        return r;
+
     }
 }
 

@@ -14,12 +14,15 @@ public interface GoodDetaillMapper {
     @Delete("delete from t_gooddetaill where id = #{id,jdbcType=INTEGER}")
     int deleteByid(Integer id);
 
-    @Insert("insert into t_gooddetaill (goodid, start, like, user, name) values (#{goodid,jdbcType=VARCHAR}, #{start,jdbcType=INTEGER},  #{like,jdbcType=INTEGER}, #{user,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})")
+    @Insert("insert into t_gooddetaill (goodid, start, like, user, name,img) values (#{goodid}, #{start},  #{like}, #{user}, #{name}, #{img})")
     int insert(GoodDetaill goodDetaill);
 
     @Select("select * from t_gooddetaill")
     List<GoodDetaill> queryAll();
     @Update("update t_gooddetaill set goodid = #{goodid,jdbcType=VARCHAR}, start = #{start,jdbcType=INTEGER}, like = #{like,jdbcType=INTEGER}, user = #{user,jdbcType=VARCHAR}, name = #{name,jdbcType=VARCHAR} ,where id = #{id,jdbcType=INTEGER}")
     int updateById(GoodDetaill record);
+
+    @Select("select * from t_gooddetail where goodid = #{goodid}")
+    List<GoodDetaill> selectByGoodsid(Integer goodid);
 
 }

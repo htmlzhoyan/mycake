@@ -12,99 +12,23 @@
 	    <![endif]-->
 	    <link href="css/public.css" rel="stylesheet" type="text/css">
 	    <link href="css/intro.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/handlebars.min.js"></script>
 	</head>
 	<body>
 		<div class="sort_fruit choice">
 			<header>
-				<a class="fl" href="cakeSort.html"><i class="iconfont">&#xe632;</i></a>
+				<a class="fl" onclick="window.history.go(1)"><i class="iconfont">&#xe632;</i></a>
 				<h2>水果沙拉</h2>
 				<a class="search" href="#"><i class="iconfont">&#xe603;</i></a>
 			</header>
-			<div class="sortCon clearfix">
-				<dl>
-					<dt><a href="#"><img src="images/sort_img01.jpg"></a></dt>
-					<dd><a href="#">蔬菜水果沙拉</a></dd>
-					<dd>
-						<p class="fl">
-							<a href="#"><i class="iconfont">&#xe6b3;</i></a>
-							<span>1.04K</span>
-						</p>
-						<p class="fr">
-							<a href="#"><i class="iconfont">&#xe620;</i></a>
-							<span>946</span>
-						</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt><a href="#"><img src="images/sort_img02.jpg"></a></dt>
-					<dd><a href="#">火龙果沙拉</a></dd>
-					<dd>
-						<p class="fl">
-							<a href="#"><i class="iconfont">&#xe6b3;</i></a>
-							<span>1.04K</span>
-						</p>
-						<p class="fr">
-							<a href="#"><i class="iconfont">&#xe620;</i></a>
-							<span>946</span>
-						</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt><a href="#"><img src="images/sort_img03.jpg"></a></dt>
-					<dd><a href="#">番茄水果沙拉</a></dd>
-					<dd>
-						<p class="fl">
-							<a href="#"><i class="iconfont">&#xe6b3;</i></a>
-							<span>1.04K</span>
-						</p>
-						<p class="fr">
-							<a href="#"><i class="iconfont">&#xe620;</i></a>
-							<span>946</span>
-						</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt><a href="#"><img src="images/sort_img04.jpg"></a></dt>
-					<dd><a href="#">蔬菜水果沙拉</a></dd>
-					<dd>
-						<p class="fl">
-							<a href="#"><i class="iconfont">&#xe6b3;</i></a>
-							<span>1.04K</span>
-						</p>
-						<p class="fr">
-							<a href="#"><i class="iconfont">&#xe620;</i></a>
-							<span>946</span>
-						</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt><a href="#"><img src="images/sort_img05.jpg"></a></dt>
-					<dd><a href="#">草莓水果沙拉</a></dd>
-					<dd>
-						<p class="fl">
-							<a href="#"><i class="iconfont">&#xe6b3;</i></a>
-							<span>1.04K</span>
-						</p>
-						<p class="fr">
-							<a href="#"><i class="iconfont">&#xe620;</i></a>
-							<span>946</span>
-						</p>
-					</dd>
-				</dl>
-				<dl>
-					<dt><a href="#"><img src="images/sort_img06.jpg"></a></dt>
-					<dd><a href="#">蔬菜水果沙拉</a></dd>
-					<dd>
-						<p class="fl">
-							<a href="#"><i class="iconfont">&#xe6b3;</i></a>
-							<span>1.04K</span>
-						</p>
-						<p class="fr">
-							<a href="#"><i class="iconfont">&#xe620;</i></a>
-							<span>946</span>
-						</p>
-					</dd>
-				</dl>
+			<div class="sortCon clearfix" id="isFruit">
+
+
+
+
+
+
 			</div>
 			<!--footer-->
 		<footer>
@@ -117,5 +41,45 @@
 	
 		</div>
 	</body>
+	<script id="show-fruit" type="text/x-handlebars-template">
+		{{#each list}}
+		<dl>
+			<dt><a href="#"><img style="width: 100%;height: 15rem;" src="{{img}}"></a></dt>
+			<dd><a href="#">{{name}}</a></dd>
+			<dd>
+				<p class="fl">
+					<a href="#"><i class="iconfont">&#xe6b3;</i></a>
+					<span>{{start}}</span>
+				</p>
+				<p class="fr">
+					<a href="#"><i class="iconfont">&#xe620;</i></a>
+					<span>{{like}}</span>
+				</p>
+			</dd>
+		</dl>
+		{{/each}}
+	</script>
+	<script>
+        function getQueryString(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var result = window.location.search.substr(1).match(reg);
+            return result ? decodeURIComponent(result[2]) : null;
+        }
+		$(function () {
 
+
+            var userhtml = $("#show-fruit").html();
+            var template = Handlebars.compile(userhtml);
+            var id = getQueryString("id")
+			$.ajax({
+				url:"goodsDetail",
+				type:"get",
+                dataType:"json",
+                data:{"id":id},
+                success:function(data){
+                    $("#isFruit").html(template({list:data.data}));
+                }
+			})
+        })
+	</script>
 </html>
