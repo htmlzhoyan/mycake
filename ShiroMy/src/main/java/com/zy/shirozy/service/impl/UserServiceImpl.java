@@ -25,6 +25,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+
+    //注册
     @Override
     public R save(User user) {
 
@@ -34,11 +36,17 @@ public class UserServiceImpl implements UserService {
         return ResultUtil.setRes(userMapper.insert(user));
     }
 
+
+    //查询展示用户名
     @Override
     public R checkName(String name) {
-        return null;
+        User user = userMapper.selectByName(name);
+        R r = new R(1,user.getName(), null);
+        return r;
     }
 
+
+    //登录
     @Override
     public User login(String name, String password) {
         User user = userMapper.selectByName(name);
@@ -68,4 +76,6 @@ public class UserServiceImpl implements UserService {
     public boolean updateUserById(User user) {
         return userMapper.updateByNo(user)>0;
     }
+
+
 }
