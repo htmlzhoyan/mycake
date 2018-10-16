@@ -1,16 +1,16 @@
 package com.zy.shirozy.domain;
 
-public class RoleauthorityKey {
-    private Integer aid;
+public class Userrole {
+    private Integer uid;
 
     private Integer rid;
 
-    public Integer getAid() {
-        return aid;
+    public Integer getUid() {
+        return uid;
     }
 
-    public void setAid(Integer aid) {
-        this.aid = aid;
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public Integer getRid() {
