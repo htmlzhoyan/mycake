@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface NewMapper {
 
-    @Delete("delete from t_new where id = #{id,jdbcType=INTEGER}\n")
+    @Delete("delete from t_new where id = #{id,jdbcType=INTEGER}")
     int deleteByid(Integer id);
 
     @Insert("insert into t_new (id, aid) values (#{id,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER})")

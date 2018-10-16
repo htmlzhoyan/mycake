@@ -1,7 +1,9 @@
 package com.zy.shirozy.service.impl;
 
 import com.zy.shirozy.common.PassUtil;
+import com.zy.shirozy.domain.Authority;
 import com.zy.shirozy.domain.User;
+import com.zy.shirozy.mapper.AuthorityMapper;
 import com.zy.shirozy.mapper.UserMapper;
 import com.zy.shirozy.service.UserService;
 import com.zy.shirozy.common.ResultUtil;
@@ -24,6 +26,8 @@ import java.util.Objects;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private AuthorityMapper authorityMapper;
 
 
     //注册
@@ -67,9 +71,32 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<MenuVo> queryMenu(int uid) {
 
-        return null;
+        List<Authority> total = authorityMapper.selectByMenuUid(uid);
+        List<MenuVo> menuVos = new ArrayList<>();
+        for (Authority a: total) {
+            if(a.getParentid() == 0){
+                MenuVo menuVo = new MenuVo();
+                menuVo.setParent(a);
+                menuVo.setChildrens(new ArrayList<>());
+                menuVos.add(menuVo);
+            }else{
+                int index = indexParent(menuVos,a);
+                if(index > 0){
+                    menuVos.get(index).getChildrens();
+                }
+            }
+        }
+        return menuVos;
     }
 
+    private int indexParent(List<MenuVo> menuVos,Authority authority){
+        for(int i=0;i<menuVos.size();i++){
+            if(menuVos.get(i).getParent().getId().intValue()==authority.getParentid().intValue()){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 
     @Override
