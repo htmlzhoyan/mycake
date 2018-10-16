@@ -18,14 +18,15 @@ import java.util.List;
 
 public interface NewService {
 
+    //删除
     R deleteById(Integer id);
 
+    //增加
     boolean insert(New record);
 
+    //修改
     R updateById(New record);
-
-
-
+    //展示所有
     List<New> queryAll();
 }
 
