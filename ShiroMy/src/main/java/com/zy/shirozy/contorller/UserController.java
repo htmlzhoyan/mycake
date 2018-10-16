@@ -31,6 +31,7 @@ public class UserController {
         if(user!=null){
             Subject subject=SecurityUtils.getSubject();
             UsernamePasswordToken token = new UsernamePasswordToken(name,password);
+            request.getSession.setAttribute("name",name);
             subject.getSession().setAttribute("user",user);
             subject.login(token);
             return ResultUtil.setOK("登录成功");
@@ -39,7 +40,14 @@ public class UserController {
         }
 
     }
+    
+    //显示用户名
+    @RequestMapping("showname.do")
+    public R showName(HttpSession session){
 
+        return userService.checkName((String) session.getAttribute("name"));
+    }
+    
     //修改个人资料
     @RequestMapping(value ="userupdate.do")
 
