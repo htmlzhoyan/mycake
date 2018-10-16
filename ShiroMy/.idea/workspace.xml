@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1895174-5a70-4d1d-b9ad-5ce7963fa035" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/contorller/AuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/contorller/AuthorityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/mapper/AuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/mapper/AuthorityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/service/AuthorityServie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/service/AuthorityServie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/service/impl/AuthorityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/service/impl/AuthorityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/vo/MenuVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zy/shirozy/vo/MenuVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/cakeSort.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/cakeSort.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/register.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,12 +22,13 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="11" />
+          <entry key="html" value="13" />
           <entry key="java" value="70" />
           <entry key="js" value="1" />
           <entry key="properties" value="3" />
@@ -40,7 +37,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="11" />
+          <entry key="HTML" value="13" />
           <entry key="JAVA" value="70" />
           <entry key="JavaScript" value="1" />
           <entry key="Properties" value="3" />
@@ -49,7 +46,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="686" />
+          <entry key="html" value="718" />
           <entry key="java" value="816" />
           <entry key="properties" value="2" />
           <entry key="xml" value="8" />
@@ -57,7 +54,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="686" />
+          <entry key="HTML" value="718" />
           <entry key="JAVA" value="816" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="8" />
@@ -67,11 +64,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/cakeSort.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="95" column="66" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
+            <state relative-caret-position="307">
+              <caret line="120" column="10" lean-forward="true" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -79,8 +85,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="146" column="53" lean-forward="true" selection-start-line="146" selection-start-column="21" selection-end-line="146" selection-end-column="53" />
+            <state relative-caret-position="2204">
+              <caret line="146" column="53" selection-start-line="146" selection-start-column="21" selection-end-line="146" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -88,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zy/shirozy/contorller/AuthorityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="247">
               <caret line="24" column="33" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -123,12 +138,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/serviceimpl/GoodDetaillServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/contorller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/shiro/ShiroConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/domain/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/mapper/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/register.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/mapper/AuthorityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/service/GoodDetaillService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/service/UserService.java" />
@@ -140,6 +153,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zy/shirozy/mapper/AuthorityMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/cakeSort.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/register.html" />
       </list>
     </option>
   </component>
@@ -157,7 +172,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-224" />
     <option name="y" value="12" />
     <option name="width" value="2382" />
@@ -169,8 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,6 +310,8 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,7 +321,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539615229953" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539653649279" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../yasuo/面试题/mycake-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -366,16 +381,18 @@
       <workItem from="1539590434393" duration="2655000" />
       <workItem from="1539593221690" duration="1077000" />
       <workItem from="1539594450455" duration="17601000" />
+      <workItem from="1539653302661" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24035000" />
+    <option name="totallyTimeSpent" value="24357000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-112" y="6" width="1191" height="695" extended-state="0" />
+    <frame x="-6" y="-6" width="1293" height="773" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2109444" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19676113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -385,8 +402,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14361702" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4539007" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2647975" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.45327103" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -504,13 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zy/shirozy/service/impl/GoodDetaillServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -557,13 +567,6 @@
             <element signature="e#850#851#0" expanded="true" />
             <element signature="e#895#896#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="69" column="21" lean-forward="true" selection-start-line="62" selection-start-column="20" selection-end-line="69" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -706,9 +709,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/cakeSort.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="120" column="10" lean-forward="true" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zy/shirozy/contorller/AuthorityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="247">
           <caret line="24" column="33" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -718,15 +728,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="146" column="53" lean-forward="true" selection-start-line="146" selection-start-column="21" selection-end-line="146" selection-end-column="53" />
+        <state relative-caret-position="2204">
+          <caret line="146" column="53" selection-start-line="146" selection-start-column="21" selection-end-line="146" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/cakeSort.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="95" column="66" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
+        <state>
+          <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
         </state>
       </provider>
     </entry>
