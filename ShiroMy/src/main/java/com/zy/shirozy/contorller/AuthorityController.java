@@ -24,4 +24,14 @@ public class AuthorityController {
         return authorityServie.selectByParent(id);
     }
 
+    @GetMapping("selectBanner")
+    public List<Authority> selectByBanner(){
+        return  authorityServie.selectByBanner();
+    }
+
+    @GetMapping("selectByNew")
+     public List<Authority> selectByNew(){
+        return  authorityServie.selectByNew();
+     }
+
 }

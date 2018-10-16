@@ -36,4 +36,13 @@ public interface AuthorityMapper {
     int updateByPrimaryKeySelective(Authority record);
 
     int updateByPrimaryKey(Authority record);
+    //banner图
+    @Select("SELECT g1.* from t_banner t1\n" +
+            "INNER JOIN t_authority g1\n" +
+            "on t1.aid=g1.id")
+    List<Authority> selectByBanner();
+
+    @Select("SELECT g1.* from t_authority g1 ORDER BY g1.id desc LIMIT 0,3")
+    List<Authority> selectByNew();
+
 }

@@ -167,9 +167,9 @@ nav a:nth-child(3) span {
 
 /*swiper*/
  .swiper-container {
-  	width: 140%;
+
 	margin: 1rem auto;
-	left: -13rem;
+
 }
 .swiper-slide {
     text-align: center;

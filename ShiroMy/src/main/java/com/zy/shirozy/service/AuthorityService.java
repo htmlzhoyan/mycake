@@ -9,4 +9,6 @@ import java.util.List;
 public interface AuthorityService {
     List<MenuVo> queryAll();
     List<Authority> selectByParent(Integer id);
+    List<Authority> selectByBanner();
+    List<Authority> selectByNew();
 }
