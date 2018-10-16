@@ -1,12 +1,12 @@
 package com.zy.shirozy.mapper;
 
 
-import com.zy.shirozy.domain.RoleauthorityKey;
+import com.zy.shirozy.domain.Roleauthority;
 
 public interface RoleauthorityMapper {
-    int deleteByPrimaryKey(RoleauthorityKey key);
+    int deleteByPrimaryKey(Roleauthority key);
 
-    int insert(RoleauthorityKey record);
+    int insert(Roleauthority record);
 
-    int insertSelective(RoleauthorityKey record);
+    int insertSelective(Roleauthority record);
 }
