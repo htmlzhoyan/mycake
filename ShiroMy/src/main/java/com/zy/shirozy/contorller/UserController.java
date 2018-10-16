@@ -52,7 +52,7 @@ public class UserController {
 
     //修改个人资料
     @RequestMapping(value ="userupdate.do")
-    //@ResponseBody
+    @ResponseBody
     public String updateUserById(User user){
         if(userService.updateUserById(user)){
             return "redirect:/memenber.html";

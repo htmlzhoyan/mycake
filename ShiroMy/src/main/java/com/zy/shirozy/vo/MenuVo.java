@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class MenuVo {
     private Authority parent;
-    private List<Authority> childrens;
 
     public Authority getParent() {
         return parent;
@@ -30,7 +29,13 @@ public class MenuVo {
         this.childrens = childrens;
     }
 
+    private List<Authority> childrens;
 
-
-
+    @Override
+    public String toString() {
+        return "MenuVo{" +
+                "parent=" + parent +
+                ", childrens=" + childrens +
+                '}';
+    }
 }

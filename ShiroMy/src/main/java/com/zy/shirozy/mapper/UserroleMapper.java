@@ -1,12 +1,12 @@
 package com.zy.shirozy.mapper;
 
 
-import com.zy.shirozy.domain.UserroleKey;
+import com.zy.shirozy.domain.Userrole;
 
 public interface UserroleMapper {
 
 
-    int insert(UserroleKey record);
+    int insert(Userrole record);
 
-    int insertSelective(UserroleKey record);
+    int insertSelective(Userrole record);
 }

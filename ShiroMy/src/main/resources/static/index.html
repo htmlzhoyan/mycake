@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="css/public.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/handlebars.min.js"></script>
 		<!--[if lt IE 9]>
 	      	<script src="js/html5shiv.js"></script>
 	      	<script src="js/respond.js"></script>
@@ -33,12 +35,9 @@
 			</ul>
 		</div>
 		<!--nav-->
-		<nav>
-			<a href="cakeSort.html"><img src="images/index_icon1.jpg"/><span>糕点</span></a>
-			<a href="cakeSort.html"><img src="images/index_icon2.jpg"/><span>饮品</span></a>
-			<a href="intro.html"><img src="images/index_icon3.jpg"/><span>推荐</span></a>
-			<a href="cakeSort.html"><img src="images/index_icon4.jpg"/><span>甜点</span></a>
-			<a href="fruitSort.html"><img src="images/index_icon5.jpg"/><span>水果</span></a>
+
+		<nav id="navid">
+
 		</nav>
 		<!--like-->
 		<div class="like">
@@ -143,10 +142,34 @@
 		        spaceBetween: 10
 		    });
 		</script>
-		
-		
-		
-		
-		
+		<script id="show-user" type="text/x-handlebars-template">
+			{{#each list}}
+			<a href="{{parent.aurl}}?id={{parent.id}}"><img src="{{parent.aicon}}"/><span>{{parent.title}}</span></a>
+			{{/each}}
+
+		<!--	<a href="cakeSort.html"><img src="images/index_icon2.jpg"/><span>饮品</span></a>
+			<a href="intro.html"><img src="images/index_icon3.jpg"/><span>推荐</span></a>
+			<a href="cakeSort.html"><img src="images/index_icon4.jpg"/><span>甜点</span></a>
+			<a href="fruitSort.html"><img src="images/index_icon5.jpg"/><span>水果</span></a>-->
+
+		</script>
+		<script>
+			$(function () {
+			    var userhtml = $("#show-user").html();
+			    var template = Handlebars.compile(userhtml);
+				$.ajax({
+                    type:"get",
+					url:"authority.do",
+                    dataType:"json",
+                    success:function(data){
+                        console.log(data);
+                        $("#navid").html(template({list:data}))
+                    }
+				})
+            })
+		</script>
+
+
+
 	</body>
 </html>
