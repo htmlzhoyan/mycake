@@ -20,9 +20,14 @@ public interface AuthorityMapper {
             "    INNER JOIN t_roleauthority roa\n" +
             "    on a1.id = roa.aid\n" +
             "    INNER JOIN t_role r\n" +
-            "    on roa.rid = r.id")
+            "    on roa.rid = r.id ORDER BY a1.parentId asc,a1.id asc")
     @ResultType(Authority.class)
     List<Authority> selectByParentId();
+
+
+    @Select("SELECT * from t_authority where parentId = #{parentId}")
+    @ResultType(Authority.class)
+    List<Authority> selectByParent(Integer id);
 
     int updateByPrimaryKeySelective(Authority record);
 

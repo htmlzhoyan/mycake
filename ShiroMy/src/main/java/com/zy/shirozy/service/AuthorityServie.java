@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface AuthorityServie {
     List<MenuVo> queryAll();
+    List<Authority> selectByParent(Integer id);
 }
