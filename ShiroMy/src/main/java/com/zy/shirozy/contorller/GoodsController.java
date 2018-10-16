@@ -37,6 +37,7 @@ public class GoodsController {
     private GoodDetaillServiceImpl goodDetaillService;
 
     @RequestMapping(value = "/goodsadd.do",method = {RequestMethod.POST})
+    @ResponseBody
     public String add(GoodDetaill goodDetaill){
         if(goodDetaillService.insert(goodDetaill)){
             return "redirect:/goodslist.html";

@@ -37,6 +37,8 @@ public class NewController {
         }
     }
 
+
+
     @RequestMapping(value = "/newdel.do",method = {RequestMethod.POST})
         @ResponseBody
         public R delete(int id){
