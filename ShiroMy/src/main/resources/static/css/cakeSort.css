@@ -69,7 +69,14 @@ body,html{
 	margin-top: 0.8rem;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
+
 }
+.cakeSort .sort1 a{
+	width: 26%;
+	margin-bottom: 2rem;
+}
+
 .sort{
 	padding-bottom: 5rem;
 }
