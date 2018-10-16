@@ -20,14 +20,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * 〈一句话功能简述〉<br> 
- * 〈〉
- *
- * @author 邦哥的电脑
- * @create 2018-10-14
- * @since 1.0.0
- */
 @Service
 public class NewServiceImpl implements NewService {
 
@@ -37,7 +29,7 @@ public class NewServiceImpl implements NewService {
 
     @Override
     public R deleteById(Integer id) {
-        return ResultUtil.setRes(newMapper.deleteByid(id));
+        return ResultUtil.setRes(newMapper.deleteById(id));
 
     }
 
@@ -48,7 +40,7 @@ public class NewServiceImpl implements NewService {
 
     @Override
     public R updateById(New record) {
-        return ResultUtil.setRes(newMapper.updateByid(record));
+        return ResultUtil.setRes(newMapper.updateById(record));
     }
 
     @Override

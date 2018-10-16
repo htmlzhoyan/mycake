@@ -11,7 +11,6 @@
 package com.zy.shirozy.contorller;
 
 
-import com.zy.shirozy.domain.New;
 import com.zy.shirozy.service.NewService;
 import com.zy.shirozy.vo.R;
 import org.springframework.beans.factory.annotation.Autowired;

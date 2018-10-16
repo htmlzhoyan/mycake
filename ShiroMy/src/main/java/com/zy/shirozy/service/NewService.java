@@ -15,14 +15,7 @@ import com.zy.shirozy.vo.R;
 
 import java.util.List;
 
-/**
- * 〈一句话功能简述〉<br> 
- * 〈〉
- *
- * @author 邦哥的电脑
- * @create 2018-10-14
- * @since 1.0.0
- */
+
 public interface NewService {
 
     R deleteById(Integer id);
@@ -30,6 +23,8 @@ public interface NewService {
     boolean insert(New record);
 
     R updateById(New record);
+
+
 
     List<New> queryAll();
 }
