@@ -7,6 +7,5 @@ import com.zy.shirozy.vo.MenuVo;
 import java.util.List;
 
 public interface AuthorityServie {
-    List<MenuVo> queryAll();
     List<Authority> selectByParent(Integer id);
 }

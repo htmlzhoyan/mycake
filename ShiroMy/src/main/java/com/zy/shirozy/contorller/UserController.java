@@ -3,17 +3,16 @@ package com.zy.shirozy.contorller;
 import com.zy.shirozy.common.ResultUtil;
 import com.zy.shirozy.domain.User;
 import com.zy.shirozy.service.impl.UserServiceImpl;
+import com.zy.shirozy.vo.MenuVo;
 import com.zy.shirozy.vo.R;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -43,12 +42,18 @@ public class UserController {
 
     //修改个人资料
     @RequestMapping(value ="userupdate.do")
-    @ResponseBody
+
     public String updateUserById(User user){
         if(userService.updateUserById(user)){
             return "redirect:/memenber.html";
         }else {
             return "redirect:/EditData.html";
         }
+    }
+    //查询菜单
+    @GetMapping("usermenus.do")
+    public List<MenuVo> menu(){
+        User user = (User) SecurityUtils.getSubject().getSession().getAttribute("user");
+        return userService.queryMenu(user.getId());
     }
 }
