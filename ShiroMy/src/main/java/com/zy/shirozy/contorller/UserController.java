@@ -31,7 +31,7 @@ public class UserController {
         if(user!=null){
             Subject subject=SecurityUtils.getSubject();
             UsernamePasswordToken token = new UsernamePasswordToken(name,password);
-            request.getSession.setAttribute("name",name);
+            request.getSession().setAttribute("name",name);
             subject.getSession().setAttribute("user",user);
             subject.login(token);
             return ResultUtil.setOK("登录成功");
