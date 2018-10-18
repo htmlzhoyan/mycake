@@ -89,7 +89,7 @@ public class GoodsController {
         System.out.println(file.getOriginalFilename());
         String fName =(new Date().getTime()) + file.getOriginalFilename();
         Map<String, Object> map = new HashMap<>();
-        String path = "C:\\elip\\ShiroMy\\mycake\\ShiroMy\\target\\classes\\static\\upload";
+        String path = "C:\\elip\\ShiroMy\\mycake\\ShiroMy\\target\\classes\\static\\images";
         File f1 = new File(path);
         if(!f1.exists()){
             f1.mkdirs();
