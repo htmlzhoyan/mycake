@@ -33,5 +33,8 @@ public class AuthorityController {
      public List<Authority> selectByNew(){
         return  authorityServie.selectByNew();
      }
-
+    @GetMapping("selectByParentById")
+     public List<Authority> selectByParentById(){
+         return  authorityServie.selectByParentById();
+     }
 }

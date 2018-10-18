@@ -35,6 +35,7 @@ public class GoodDetaillServiceImpl implements GoodDetaillService{
     private GoodDetaillMapper goodDetaillMapper;
     @Override
     public boolean insert(GoodDetaill goodDetaill) {
+        System.out.println(goodDetaill.getName());
         return  goodDetaillMapper.insert(goodDetaill) > 0;
     }
 

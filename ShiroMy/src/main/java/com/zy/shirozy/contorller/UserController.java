@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -26,12 +27,12 @@ public class UserController {
 
 
     @PostMapping("/userlogin.do")
-    public R login(String name, String password, HttpServletRequest request){
+    public R login(String name, String password, HttpServletRequest request,HttpSession session){
         User user = userService.login(name, password);
         if(user!=null){
             Subject subject=SecurityUtils.getSubject();
             UsernamePasswordToken token = new UsernamePasswordToken(name,password);
-            request.getSession.setAttribute("name",name);
+            session.setAttribute("uname",user);
             subject.getSession().setAttribute("user",user);
             subject.login(token);
             return ResultUtil.setOK("登录成功");
@@ -44,8 +45,12 @@ public class UserController {
     //显示用户名
     @RequestMapping("showname.do")
     public R showName(HttpSession session){
-
-        return userService.checkName((String) session.getAttribute("name"));
+        R r = new R();
+        r.setCode(200);
+        r.setMsg("获取成功");
+        r.setData(session.getAttribute("uname"));
+        return r;
+        //return userService.checkName((String) session.getAttribute("name"));
     }
     
     //修改个人资料

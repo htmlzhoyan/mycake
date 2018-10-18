@@ -50,6 +50,11 @@ public class AuthorityServiceImpl implements AuthorityService {
         return authorityMapper.selectByNew();
     }
 
+    @Override
+    public List<Authority> selectByParentById() {
+        return authorityMapper.selectByParentById();
+    }
+
     private int indexPareng(List<MenuVo> menuVos,Authority authority){
         for (int i = 0; i < menuVos.size() ; i++) {
             if(menuVos.get(i).getParent().getId().intValue()==authority.getParentid().intValue()){

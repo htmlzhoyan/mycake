@@ -33,6 +33,10 @@ public interface AuthorityMapper {
     @ResultType(Authority.class)
     List<Authority> selectByParent(Integer id);
 
+    @Select("SELECT * from t_authority")
+    @ResultType(Authority.class)
+    List<Authority> selectByParentById();
+
     int updateByPrimaryKeySelective(Authority record);
 
     int updateByPrimaryKey(Authority record);

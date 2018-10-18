@@ -11,4 +11,5 @@ public interface AuthorityService {
     List<Authority> selectByParent(Integer id);
     List<Authority> selectByBanner();
     List<Authority> selectByNew();
+    List<Authority> selectByParentById();
 }
