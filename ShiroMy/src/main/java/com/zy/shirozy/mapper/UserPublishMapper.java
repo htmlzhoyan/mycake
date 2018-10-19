@@ -6,18 +6,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface PublishMapper {
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(Publish record);
-
-    int insertSelective(Publish record);
-
-    Publish selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Publish record);
-
-    int updateByPrimaryKey(Publish record);
+public interface UserPublishMapper {
 
     @Select("select * from t_publish where uid=#{uid}")
     @ResultType(Publish.class)

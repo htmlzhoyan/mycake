@@ -12,6 +12,7 @@ package com.zy.shirozy.service;
 
 
 import com.zy.shirozy.domain.Focusgoods;
+import com.zy.shirozy.domain.GoodDetaill;
 import com.zy.shirozy.vo.R;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public interface FocusGoodsService {
     R delete(int id);
     List<Focusgoods> queryAll();
     Focusgoods selectById(int id);
+    List<GoodDetaill> selectByUid(int uid);
 
 }
 

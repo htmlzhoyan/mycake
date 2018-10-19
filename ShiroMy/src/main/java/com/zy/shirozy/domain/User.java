@@ -7,6 +7,24 @@ public class User {
     private String name;
     private String phone;
     private Integer flag;
+    private String photo;
+    private String intro;
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     public Integer getId() {
         return id;

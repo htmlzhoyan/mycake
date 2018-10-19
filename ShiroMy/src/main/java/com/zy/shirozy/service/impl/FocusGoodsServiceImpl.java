@@ -12,6 +12,7 @@ package com.zy.shirozy.service.impl;
 
 import com.zy.shirozy.common.ResultUtil;
 import com.zy.shirozy.domain.Focusgoods;
+import com.zy.shirozy.domain.GoodDetaill;
 import com.zy.shirozy.mapper.FocusgoodsMapper;
 import com.zy.shirozy.service.FocusGoodsService;
 import com.zy.shirozy.vo.R;
@@ -57,6 +58,15 @@ public class FocusGoodsServiceImpl implements FocusGoodsService {
     @Override
     public Focusgoods selectById(int id) {
         return focusgoodsMapper.selectById(id);
+    }
+
+    @Override
+    public List<GoodDetaill> selectByUid(int uid) {
+        List<GoodDetaill> list = null;
+        if (uid != 0) {
+            list = focusgoodsMapper.selectByUid(uid);
+        }
+        return list;
     }
 }
 

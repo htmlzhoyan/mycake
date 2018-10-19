@@ -7,6 +7,7 @@ package com.zy.shirozy.mapper;
  */
 
 import com.zy.shirozy.domain.Focusgoods;
+import com.zy.shirozy.domain.GoodDetaill;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -32,4 +33,7 @@ public interface FocusgoodsMapper {
 
     @Update("update t_focusgoods set goodid = #{goodid,jdbcType=INTEGER}, user = #{user,jdbcType=VARCHAR} where id = #{id,jdbcType=INTEGER}")
     int updateById(Focusgoods focusgoods);
+
+    @Select("select gd.* from t_gooddetail gd inner join t_focusgoods fg on gd.id=fg.goodid where fg.uid=#{uid}")
+    List<GoodDetaill> selectByUid(int uid);
 }
