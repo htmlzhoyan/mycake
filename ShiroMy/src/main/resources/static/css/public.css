@@ -64,8 +64,8 @@ footer{
 }
 footer a{
 	font-size: 1.1rem;
-	flex: 1 1 20%;
-	-webkit-flex: 1 1 20%;
+	flex: 1 1 33%;
+	-webkit-flex: 1 1 33%;
 }
 footer a i{
 	font-size: 1.8rem;
@@ -74,21 +74,13 @@ footer a span{
 	display: block;
 }
 footer a img{
-	width: 55%;
+	width: 20%;
 }
 footer a:nth-child(3){
 	position: relative;
 }
-footer a:nth-child(3) img{
-	width: 50%;
-	position: absolute;
-	top: -50%;
-	left: 50%;
-	margin-left: -25%;
-}
+
 footer a:nth-child(4) img,footer a:nth-child(5) img{
 	width: 28%;
 }
-footer a:nth-child(3) span{
-	padding-top: 33%;
-}
+

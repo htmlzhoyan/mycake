@@ -12,39 +12,8 @@
 	    <script src="js/html5shiv.js"></script>
 	    <script src="js/respond.js"></script>
 	    <![end if]-->
-	    
-	    <script>
-			window.onload = function() {
-				var icon = document.getElementsByClassName("fan");
-				var add = document.getElementsByClassName("add");
-				for (var i = 0; i < icon.length; i++) {
-					icon[i].onclick = function() {
-						for (var i = 0; i < icon.length; i++) {
-							if (this == icon[i]) {
-								var str = add[i].innerHTML.toString();
-								var str1 ="已关注";
-								var str2 ="互相关注";
-								if(str1 != str && str!=str2){
-									icon[i].innerHTML = "&#xe65c;";
-									add[i].innerHTML = "互相关注";
-									icon[i].style.color = "#767676";
-									add[i].style.color = "#767676";
-							 	}
-								else{
-									icon[i].innerHTML = "&#xe60a;";
-									add[i].innerHTML = "加关注";
-									icon[i].style.color = "#ff6900";
-									add[i].style.color = "#ff6900";
-								}
-							}
 
-
-						}
-					}
-				}
-
-			}
-		</script>
+		<script src="js/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -59,39 +28,79 @@
 			</header>
 			<!--fansList-->
 			<div class="fansList">
-				<div>
-					<a href=""><img src="images/gz-7.jpg" /></a>
-					<p><span>宝妈小厨</span><span>爱美食、爱分享、擅长蛋糕</span></p>
-					<p><a><i class="iconfont fan">&#xe62a;</i><span class="add">已关注</span></a></p>
-				</div>
-				<div>
-					<a href=""><img src="images/gz-8.jpg" /></a>
-					<p><span>King麻麻</span><span>你可以在月光下想象未来，但必须在</span></p>
-					<p><a ><i class="iconfont fan">&#xe62a;</i><span class="add">已关注</span></a></p>
-				</div>
-				<div>
-					<a href=""><img src="images/gz-9.jpg" /></a>
-					<p><span>姜叔的日食</span><span>治愈你的心和胃：</span></p>
-					<p><a><i class="iconfont fan">&#xe62a;</i><span class="add">已关注</span></a></p>
-				</div>
-				<div>
-					<a href=""><img src="images/gz-10.jpg" /></a>
-					<p><span>米多小鱼</span><span>专心不专业吃货一枚，热爱分享狂人</span></p>
-					<p><a><i class="iconfont fan">&#xe65c;</i><span class="add">互相关注</span></a></p>
-				</div>
-				<div>
-					<a href=""><img src="images/gz-11.jpg" /></a>
-					<p><span>食尚先生</span><span>王森蛋糕http://www.bake.com</span></p>
-					<p><a><i class="iconfont fan">&#xe65c;</i><span class="add">互相关注</span></a></p>
-				</div>
-				<div>
-					<a href=""><img src="images/gz-12.jpg" /></a>
-					<p><span>糖小饼</span><span>爱吃会吃，喜欢小手工</span></p>
-				    <p><a class=""><i class="iconfont fan">&#xe62a;</i><span class="add">已关注</span></a></p>
-				</div>
+
 			</div>
 		</div>
 		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript">
+            $(function () {
+                $.ajax({
+                    type:"get",
+                    url:"fanslist.do",
+                    dataType:"json",
+                    success:function (data) {
+                        if (data.code == 1) {
+                            var infos = data.data;
+                            var html = "";
+                            $(infos.list1).each(function () {
+
+                                html += "<div>";
+                                html += "<a href=''><img src='images/" + this.photo + "' /></a>";
+                                html += "   <p><span>" + this.name + "</span><span>" + this.intro + "</span></p>";
+                                html += "<p><a><i class='iconfont fan' id='addimg' title='" + this.id + "'>&#xe65c;</i><span  class='add'>互相关注</span></a></p>";
+                                html += "</div>";
+                            })
+
+                            $(".fansList").append($(html));
+
+                            var icon = document.getElementsByClassName("fan");
+                            var add = document.getElementsByClassName("add");
+                            for (var i = 0; i < icon.length; i++) {
+                                icon[i].onclick = function() {
+                                    for (var i = 0; i < icon.length; i++) {
+                                        if (this == icon[i]) {
+                                            var str = add[i].innerHTML.toString();
+                                            var str1 ="已关注";
+                                            var str2 ="互相关注";
+                                            if(str1 != str && str!=str2){
+                                                icon[i].innerHTML = "&#xe65c;";
+                                                add[i].innerHTML = "互相关注";
+                                                icon[i].style.color = "#767676";
+                                                add[i].style.color = "#767676";
+                                                changeStatus(this.title);
+                                            } else {
+                                                icon[i].innerHTML = "&#xe60a;";
+                                                add[i].innerHTML = "加关注";
+                                                icon[i].style.color = "#ff6900";
+                                                add[i].style.color = "#ff6900";
+                                                changeStatus(this.title);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                })
+
+                function changeStatus(data1) {
+                    $.ajax({
+                        type: "post",
+                        url: "changeflag.do?id=" + data1,
+                        success: function (obj) {
+                            if (obj.code == 1) {
+                                /*window.location.href="fans.html";*/
+                            } else {
+                                /*window.location.href="fans.html";*/
+                            }
+                        }
+                    })
+                }
+
+            })
+
+		</script>
 	</body>
 
 </html>
