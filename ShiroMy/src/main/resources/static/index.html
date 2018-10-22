@@ -144,7 +144,7 @@
 					dataType:"json",
 					success:function (data) {
                         for (var i = 0; i < data.length; i++) {
-                            $("#isLike").append('<li style="width: 30%"><a href="'+data[i].aurl+'"><img style="width: 100%;height: 10rem" src="'+data[i].aicon+'" class="gameImg" /><p>'+data[i].title+'</p></a></li>')
+                            $("#isLike").append('<li style="width: 30%"><a href="'+data[i].aurl+'?id='+data[i].id+'"><img style="width: 100%;height: 10rem" src="'+data[i].aicon+'" class="gameImg" /><p>'+data[i].title+'</p></a></li>')
                         }
 
 
